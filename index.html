@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#fdf7f1" />
+    <title>Sriyesh & Anagha — Wedding Invitation | 15 June 2026</title>
+    <meta
+      name="description"
+      content="Sriyesh M weds Anagha M Kumar — Monday, 15 June 2026 at Eden Garden Convention Centre, Pandalam. With our families, we joyfully invite you to share in our special day."
+    />
+    <meta property="og:title" content="Sriyesh & Anagha — Wedding Invitation" />
+    <meta
+      property="og:description"
+      content="Monday, 15 June 2026 · Eden Garden Convention Centre, Pandalam"
+    />
+    <meta property="og:image" content="assets/couple.png" />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Great+Vibes&family=Pinyon+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Background petals -->
+    <div id="petals" aria-hidden="true"></div>
+
+    <!-- Cursor trail -->
+    <div id="cursor-trail" aria-hidden="true"></div>
+
+    <!-- Soft floating ambient circles -->
+    <div class="ambient" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <div id="music-hint" class="music-hint" aria-hidden="true">
+      Tap to play music
+    </div>
+    <button id="music-toggle" class="music-toggle" aria-label="Enable music">
+      <span aria-hidden="true">♪</span>
+    </button>
+    <audio id="bg-music" loop preload="none">
+      <source src="assets/music.mp3" type="audio/mpeg" />
+    </audio>
+
+    <main class="page-wrap">
+      <!-- HERO -->
+      <header class="hero reveal">
+        <button class="emblem" id="emblem-btn" aria-label="Sriyesh and Anagha monogram" type="button">
+          <svg viewBox="0 0 140 140" width="92" height="92">
+            <defs>
+              <radialGradient id="emblemGold" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#f0d896" />
+                <stop offset="100%" stop-color="#a87f3d" />
+              </radialGradient>
+            </defs>
+            <circle cx="70" cy="70" r="64" fill="none" stroke="url(#emblemGold)" stroke-width="0.8" />
+            <circle cx="70" cy="70" r="56" fill="none" stroke="url(#emblemGold)" stroke-width="0.4" />
+            <circle cx="70" cy="70" r="44" fill="none" stroke="url(#emblemGold)" stroke-width="0.4" opacity="0.6" />
+            <text
+              x="50%"
+              y="58%"
+              text-anchor="middle"
+              font-family="Pinyon Script, cursive"
+              font-size="46"
+              fill="url(#emblemGold)"
+            >
+              S<tspan dx="-2" dy="0">&amp;</tspan><tspan dx="-2">A</tspan>
+            </text>
+          </svg>
+        </button>
+
+        <p class="sanskrit-line">॥ ॐ श्री गणेशाय नमः ॥</p>
+
+        <p class="overline">With the blessings of our families</p>
+        <h1 class="couple-names">Sriyesh <span>&amp;</span> Anagha</h1>
+
+        <div class="ornament" aria-hidden="true">
+          <svg viewBox="0 0 240 16" width="240" height="16">
+            <path
+              d="M2 8 Q60 -4 120 8 T238 8"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+            />
+            <circle cx="120" cy="8" r="2.6" fill="currentColor" />
+          </svg>
+        </div>
+
+        <p class="invite-line">request the pleasure of your esteemed presence at their</p>
+        <h2>Wedding Celebration</h2>
+
+        <p class="hero-date">
+          Monday · 15<sup>th</sup> June 2026
+        </p>
+        <p class="hero-mal">Midhunam 01, 1201</p>
+      </header>
+
+      <div class="ornament soft reveal" aria-hidden="true">
+        <svg viewBox="0 0 240 16" width="240" height="16">
+          <path d="M2 8 Q60 -4 120 8 T238 8" fill="none" stroke="currentColor" stroke-width="1"/>
+          <circle cx="120" cy="8" r="2.6" fill="currentColor"/>
+        </svg>
+      </div>
+
+      <!-- COUPLE -->
+      <section class="couple reveal">
+        <p class="overline">The Couple</p>
+        <div class="couple-frame">
+          <svg class="vine vine-tl" viewBox="0 0 100 100" aria-hidden="true">
+            <path d="M2 2 Q 30 6 36 30 Q 40 56 70 60" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+            <ellipse cx="72" cy="60" rx="7" ry="3" transform="rotate(38 72 60)" fill="currentColor" />
+            <ellipse cx="32" cy="20" rx="5" ry="2.4" transform="rotate(-20 32 20)" fill="currentColor" />
+          </svg>
+          <svg class="vine vine-br" viewBox="0 0 100 100" aria-hidden="true">
+            <path d="M98 98 Q 70 94 64 70 Q 60 44 30 40" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+            <ellipse cx="28" cy="40" rx="7" ry="3" transform="rotate(38 28 40)" fill="currentColor" />
+            <ellipse cx="68" cy="80" rx="5" ry="2.4" transform="rotate(-20 68 80)" fill="currentColor" />
+          </svg>
+          <img
+            src="assets/couple.png"
+            alt="Illustration of Sriyesh and Anagha in traditional Kerala attire"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <h3 class="couple-names">Sriyesh <span>&amp;</span> Anagha</h3>
+        <p class="couple-note">
+          With the blessings of our families, we are embarking on this beautiful
+          journey together. We invite you to join us in celebrating this
+          special union and share in our joy as we begin this new chapter of
+          our lives.
+        </p>
+      </section>
+
+      <div class="ornament soft reveal" aria-hidden="true">
+        <svg viewBox="0 0 240 16" width="240" height="16">
+          <path d="M2 8 Q60 -4 120 8 T238 8" fill="none" stroke="currentColor" stroke-width="1"/>
+          <circle cx="120" cy="8" r="2.6" fill="currentColor"/>
+        </svg>
+      </div>
+
+      <!-- DETAILS -->
+      <section class="details card vine-card reveal">
+        <svg class="vine vine-tl" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M2 2 Q 30 6 36 30 Q 40 56 70 60" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+          <ellipse cx="72" cy="60" rx="7" ry="3" transform="rotate(38 72 60)" fill="currentColor" />
+          <ellipse cx="32" cy="20" rx="5" ry="2.4" transform="rotate(-20 32 20)" fill="currentColor" />
+        </svg>
+        <svg class="vine vine-br" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M98 98 Q 70 94 64 70 Q 60 44 30 40" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+          <ellipse cx="28" cy="40" rx="7" ry="3" transform="rotate(38 28 40)" fill="currentColor" />
+          <ellipse cx="68" cy="80" rx="5" ry="2.4" transform="rotate(-20 68 80)" fill="currentColor" />
+        </svg>
+        <article class="detail-item">
+          <div class="detail-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4">
+              <rect x="3" y="5" width="18" height="16" rx="2" />
+              <path d="M3 9h18M8 3v4M16 3v4" />
+            </svg>
+          </div>
+          <p class="detail-label">Date</p>
+          <p class="detail-main">15<sup>th</sup> June 2026</p>
+          <p class="detail-sub">Monday · Midhunam 01, 1201</p>
+        </article>
+
+        <div class="detail-divider" aria-hidden="true"></div>
+
+        <article class="detail-item">
+          <div class="detail-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 7v5l3 2" />
+            </svg>
+          </div>
+          <p class="detail-label">Muhurtham</p>
+          <p class="detail-main">12:00 noon</p>
+          <p class="detail-sub">to 12:22 pm</p>
+        </article>
+
+        <div class="detail-divider" aria-hidden="true"></div>
+
+        <article class="detail-item">
+          <div class="detail-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4">
+              <path d="M12 22s7-7.5 7-13a7 7 0 10-14 0c0 5.5 7 13 7 13z" />
+              <circle cx="12" cy="9" r="2.4" />
+            </svg>
+          </div>
+          <p class="detail-label">Venue</p>
+          <p class="detail-main">Eden Garden</p>
+          <p class="detail-sub">Convention Centre, Pandalam</p>
+        </article>
+      </section>
+
+      <div class="ornament soft reveal" aria-hidden="true">
+        <svg viewBox="0 0 240 16" width="240" height="16">
+          <path d="M2 8 Q60 -4 120 8 T238 8" fill="none" stroke="currentColor" stroke-width="1"/>
+          <circle cx="120" cy="8" r="2.6" fill="currentColor"/>
+        </svg>
+      </div>
+
+      <!-- COUNTDOWN -->
+      <section class="countdown reveal">
+        <p class="script-line">Counting down to our celebration</p>
+        <div class="count-grid">
+          <div class="count-box">
+            <span id="days">0</span>
+            <p>Days</p>
+          </div>
+          <div class="count-box">
+            <span id="hours">0</span>
+            <p>Hours</p>
+          </div>
+          <div class="count-box">
+            <span id="minutes">0</span>
+            <p>Minutes</p>
+          </div>
+          <div class="count-box">
+            <span id="seconds">0</span>
+            <p>Seconds</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="ornament soft reveal" aria-hidden="true">
+        <svg viewBox="0 0 240 16" width="240" height="16">
+          <path d="M2 8 Q60 -4 120 8 T238 8" fill="none" stroke="currentColor" stroke-width="1"/>
+          <circle cx="120" cy="8" r="2.6" fill="currentColor"/>
+        </svg>
+      </div>
+
+      <!-- VENUE -->
+      <section class="venue reveal">
+        <p class="overline">Find Us Here</p>
+        <h3>Eden Garden Convention Centre</h3>
+        <p class="venue-sub">Pandalam, Kerala</p>
+        <div class="map-card">
+          <svg class="vine vine-tl" viewBox="0 0 100 100" aria-hidden="true">
+            <path d="M2 2 Q 30 6 36 30 Q 40 56 70 60" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+            <ellipse cx="72" cy="60" rx="7" ry="3" transform="rotate(38 72 60)" fill="currentColor" />
+            <ellipse cx="32" cy="20" rx="5" ry="2.4" transform="rotate(-20 32 20)" fill="currentColor" />
+          </svg>
+          <svg class="vine vine-br" viewBox="0 0 100 100" aria-hidden="true">
+            <path d="M98 98 Q 70 94 64 70 Q 60 44 30 40" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+            <ellipse cx="28" cy="40" rx="7" ry="3" transform="rotate(38 28 40)" fill="currentColor" />
+            <ellipse cx="68" cy="80" rx="5" ry="2.4" transform="rotate(-20 68 80)" fill="currentColor" />
+          </svg>
+          <iframe
+            title="Eden Garden Convention Centre — Pandalam"
+            src="https://www.google.com/maps?q=Eden+Garden+Convention+Centre+Pandalam&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <a
+          class="direction-btn"
+          href="https://maps.app.goo.gl/7QZZyqnyk4u5svsVA"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <path d="M21 3l-9 18-2-7-7-2 18-9z"/>
+          </svg>
+          Get Directions
+        </a>
+      </section>
+
+      <div class="ornament soft reveal" aria-hidden="true">
+        <svg viewBox="0 0 240 16" width="240" height="16">
+          <path d="M2 8 Q60 -4 120 8 T238 8" fill="none" stroke="currentColor" stroke-width="1"/>
+          <circle cx="120" cy="8" r="2.6" fill="currentColor"/>
+        </svg>
+      </div>
+
+      <!-- CLOSING -->
+      <section class="closing reveal">
+        <p class="script-line">We joyfully await your presence and blessings</p>
+        <p class="closing-note">
+          Your love, laughter, and warm wishes are the greatest gifts we could
+          ever ask for. Come celebrate this beautiful beginning with us.
+        </p>
+        <h4 class="couple-names">Sriyesh <span>&amp;</span> Anagha</h4>
+        <p class="date-inline">15 . 06 . 2026</p>
+        <p class="farewell">With Love, Joy, and Blessings</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

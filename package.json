@@ -1,0 +1,25 @@
+{
+  "name": "sriyesh-anagha",
+  "version": "1.0.0",
+  "description": "Static website clone inspired by `akhila-sarath-wedding.netlify.app`, customized for Sriyesh and Anaagha.",
+  "main": "script.js",
+  "scripts": {
+    "dev": "live-server --port=5500 --open=index.html --watch=.",
+    "start": "live-server --port=5500 --open=index.html --watch=."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sriyesh/Anagha-Sriyesh.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Sriyesh/Anagha-Sriyesh/issues"
+  },
+  "homepage": "https://github.com/Sriyesh/Anagha-Sriyesh#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
