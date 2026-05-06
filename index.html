@@ -45,7 +45,7 @@
     <button id="music-toggle" class="music-toggle" aria-label="Enable music">
       <span aria-hidden="true">♪</span>
     </button>
-    <audio id="bg-music" loop preload="none">
+    <audio id="bg-music" loop preload="auto">
       <source src="assets/music.mp3" type="audio/mpeg" />
     </audio>
 
@@ -114,14 +114,43 @@
         <p class="overline">The Couple</p>
         <div class="couple-frame">
           <svg class="vine vine-tl" viewBox="0 0 100 100" aria-hidden="true">
-            <path d="M2 2 Q 30 6 36 30 Q 40 56 70 60" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
-            <ellipse cx="72" cy="60" rx="7" ry="3" transform="rotate(38 72 60)" fill="currentColor" />
-            <ellipse cx="32" cy="20" rx="5" ry="2.4" transform="rotate(-20 32 20)" fill="currentColor" />
+            <defs>
+              <radialGradient id="flowerGold" cx="50%" cy="40%" r="60%">
+                <stop offset="0%" stop-color="#fae3a4"/>
+                <stop offset="60%" stop-color="#d8b779"/>
+                <stop offset="100%" stop-color="#a8843a"/>
+              </radialGradient>
+            </defs>
+            <path class="stem" d="M4 4 Q 28 8 34 30 Q 38 56 64 64" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
+            <ellipse class="leaf l1" cx="18" cy="14" rx="4.6" ry="2.1" style="--rot:-20deg" fill="currentColor"/>
+            <ellipse class="leaf l2" cx="32" cy="22" rx="4" ry="2" style="--rot:24deg" fill="currentColor"/>
+            <ellipse class="leaf l3" cx="36" cy="42" rx="4.6" ry="2.2" style="--rot:-30deg" fill="currentColor"/>
+            <ellipse class="leaf l4" cx="46" cy="56" rx="4.2" ry="2" style="--rot:30deg" fill="currentColor"/>
+            <ellipse class="leaf l5" cx="54" cy="60" rx="4" ry="1.9" style="--rot:-20deg" fill="currentColor"/>
+            <g class="flower" style="--fx:64px; --fy:64px;">
+              <g transform="rotate(0 64 64)"><ellipse class="petal" cx="64" cy="58.5" rx="2.4" ry="4"/></g>
+              <g transform="rotate(72 64 64)"><ellipse class="petal" cx="64" cy="58.5" rx="2.4" ry="4"/></g>
+              <g transform="rotate(144 64 64)"><ellipse class="petal" cx="64" cy="58.5" rx="2.4" ry="4"/></g>
+              <g transform="rotate(216 64 64)"><ellipse class="petal" cx="64" cy="58.5" rx="2.4" ry="4"/></g>
+              <g transform="rotate(288 64 64)"><ellipse class="petal" cx="64" cy="58.5" rx="2.4" ry="4"/></g>
+              <circle class="flower-center" cx="64" cy="64" r="2.2"/>
+            </g>
           </svg>
           <svg class="vine vine-br" viewBox="0 0 100 100" aria-hidden="true">
-            <path d="M98 98 Q 70 94 64 70 Q 60 44 30 40" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
-            <ellipse cx="28" cy="40" rx="7" ry="3" transform="rotate(38 28 40)" fill="currentColor" />
-            <ellipse cx="68" cy="80" rx="5" ry="2.4" transform="rotate(-20 68 80)" fill="currentColor" />
+            <path class="stem" d="M96 96 Q 72 92 66 70 Q 62 44 36 36" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
+            <ellipse class="leaf l1" cx="82" cy="86" rx="4.6" ry="2.1" style="--rot:-20deg" fill="currentColor"/>
+            <ellipse class="leaf l2" cx="68" cy="78" rx="4" ry="2" style="--rot:24deg" fill="currentColor"/>
+            <ellipse class="leaf l3" cx="64" cy="58" rx="4.6" ry="2.2" style="--rot:-30deg" fill="currentColor"/>
+            <ellipse class="leaf l4" cx="54" cy="44" rx="4.2" ry="2" style="--rot:30deg" fill="currentColor"/>
+            <ellipse class="leaf l5" cx="46" cy="40" rx="4" ry="1.9" style="--rot:-20deg" fill="currentColor"/>
+            <g class="flower" style="--fx:36px; --fy:36px;">
+              <g transform="rotate(0 36 36)"><ellipse class="petal" cx="36" cy="30.5" rx="2.4" ry="4"/></g>
+              <g transform="rotate(72 36 36)"><ellipse class="petal" cx="36" cy="30.5" rx="2.4" ry="4"/></g>
+              <g transform="rotate(144 36 36)"><ellipse class="petal" cx="36" cy="30.5" rx="2.4" ry="4"/></g>
+              <g transform="rotate(216 36 36)"><ellipse class="petal" cx="36" cy="30.5" rx="2.4" ry="4"/></g>
+              <g transform="rotate(288 36 36)"><ellipse class="petal" cx="36" cy="30.5" rx="2.4" ry="4"/></g>
+              <circle class="flower-center" cx="36" cy="36" r="2.2"/>
+            </g>
           </svg>
           <img
             src="assets/couple.png"
@@ -149,14 +178,36 @@
       <!-- DETAILS -->
       <section class="details card vine-card reveal">
         <svg class="vine vine-tl" viewBox="0 0 100 100" aria-hidden="true">
-          <path d="M2 2 Q 30 6 36 30 Q 40 56 70 60" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
-          <ellipse cx="72" cy="60" rx="7" ry="3" transform="rotate(38 72 60)" fill="currentColor" />
-          <ellipse cx="32" cy="20" rx="5" ry="2.4" transform="rotate(-20 32 20)" fill="currentColor" />
+          <path class="stem" d="M4 4 Q 28 8 34 30 Q 38 56 64 64" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
+          <ellipse class="leaf l1" cx="18" cy="14" rx="4.6" ry="2.1" style="--rot:-20deg" fill="currentColor"/>
+          <ellipse class="leaf l2" cx="32" cy="22" rx="4" ry="2" style="--rot:24deg" fill="currentColor"/>
+          <ellipse class="leaf l3" cx="36" cy="42" rx="4.6" ry="2.2" style="--rot:-30deg" fill="currentColor"/>
+          <ellipse class="leaf l4" cx="46" cy="56" rx="4.2" ry="2" style="--rot:30deg" fill="currentColor"/>
+          <ellipse class="leaf l5" cx="54" cy="60" rx="4" ry="1.9" style="--rot:-20deg" fill="currentColor"/>
+          <g class="flower" style="--fx:64px; --fy:64px;">
+            <g transform="rotate(0 64 64)"><ellipse class="petal" cx="64" cy="58.5" rx="2.4" ry="4"/></g>
+            <g transform="rotate(72 64 64)"><ellipse class="petal" cx="64" cy="58.5" rx="2.4" ry="4"/></g>
+            <g transform="rotate(144 64 64)"><ellipse class="petal" cx="64" cy="58.5" rx="2.4" ry="4"/></g>
+            <g transform="rotate(216 64 64)"><ellipse class="petal" cx="64" cy="58.5" rx="2.4" ry="4"/></g>
+            <g transform="rotate(288 64 64)"><ellipse class="petal" cx="64" cy="58.5" rx="2.4" ry="4"/></g>
+            <circle class="flower-center" cx="64" cy="64" r="2.2"/>
+          </g>
         </svg>
         <svg class="vine vine-br" viewBox="0 0 100 100" aria-hidden="true">
-          <path d="M98 98 Q 70 94 64 70 Q 60 44 30 40" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
-          <ellipse cx="28" cy="40" rx="7" ry="3" transform="rotate(38 28 40)" fill="currentColor" />
-          <ellipse cx="68" cy="80" rx="5" ry="2.4" transform="rotate(-20 68 80)" fill="currentColor" />
+          <path class="stem" d="M96 96 Q 72 92 66 70 Q 62 44 36 36" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
+          <ellipse class="leaf l1" cx="82" cy="86" rx="4.6" ry="2.1" style="--rot:-20deg" fill="currentColor"/>
+          <ellipse class="leaf l2" cx="68" cy="78" rx="4" ry="2" style="--rot:24deg" fill="currentColor"/>
+          <ellipse class="leaf l3" cx="64" cy="58" rx="4.6" ry="2.2" style="--rot:-30deg" fill="currentColor"/>
+          <ellipse class="leaf l4" cx="54" cy="44" rx="4.2" ry="2" style="--rot:30deg" fill="currentColor"/>
+          <ellipse class="leaf l5" cx="46" cy="40" rx="4" ry="1.9" style="--rot:-20deg" fill="currentColor"/>
+          <g class="flower" style="--fx:36px; --fy:36px;">
+            <g transform="rotate(0 36 36)"><ellipse class="petal" cx="36" cy="30.5" rx="2.4" ry="4"/></g>
+            <g transform="rotate(72 36 36)"><ellipse class="petal" cx="36" cy="30.5" rx="2.4" ry="4"/></g>
+            <g transform="rotate(144 36 36)"><ellipse class="petal" cx="36" cy="30.5" rx="2.4" ry="4"/></g>
+            <g transform="rotate(216 36 36)"><ellipse class="petal" cx="36" cy="30.5" rx="2.4" ry="4"/></g>
+            <g transform="rotate(288 36 36)"><ellipse class="petal" cx="36" cy="30.5" rx="2.4" ry="4"/></g>
+            <circle class="flower-center" cx="36" cy="36" r="2.2"/>
+          </g>
         </svg>
         <article class="detail-item">
           <div class="detail-icon" aria-hidden="true">
@@ -243,14 +294,36 @@
         <p class="venue-sub">Pandalam, Kerala</p>
         <div class="map-card">
           <svg class="vine vine-tl" viewBox="0 0 100 100" aria-hidden="true">
-            <path d="M2 2 Q 30 6 36 30 Q 40 56 70 60" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
-            <ellipse cx="72" cy="60" rx="7" ry="3" transform="rotate(38 72 60)" fill="currentColor" />
-            <ellipse cx="32" cy="20" rx="5" ry="2.4" transform="rotate(-20 32 20)" fill="currentColor" />
+            <path class="stem" d="M4 4 Q 28 8 34 30 Q 38 56 64 64" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
+            <ellipse class="leaf l1" cx="18" cy="14" rx="4.6" ry="2.1" style="--rot:-20deg" fill="currentColor"/>
+            <ellipse class="leaf l2" cx="32" cy="22" rx="4" ry="2" style="--rot:24deg" fill="currentColor"/>
+            <ellipse class="leaf l3" cx="36" cy="42" rx="4.6" ry="2.2" style="--rot:-30deg" fill="currentColor"/>
+            <ellipse class="leaf l4" cx="46" cy="56" rx="4.2" ry="2" style="--rot:30deg" fill="currentColor"/>
+            <ellipse class="leaf l5" cx="54" cy="60" rx="4" ry="1.9" style="--rot:-20deg" fill="currentColor"/>
+            <g class="flower" style="--fx:64px; --fy:64px;">
+              <g transform="rotate(0 64 64)"><ellipse class="petal" cx="64" cy="58.5" rx="2.4" ry="4"/></g>
+              <g transform="rotate(72 64 64)"><ellipse class="petal" cx="64" cy="58.5" rx="2.4" ry="4"/></g>
+              <g transform="rotate(144 64 64)"><ellipse class="petal" cx="64" cy="58.5" rx="2.4" ry="4"/></g>
+              <g transform="rotate(216 64 64)"><ellipse class="petal" cx="64" cy="58.5" rx="2.4" ry="4"/></g>
+              <g transform="rotate(288 64 64)"><ellipse class="petal" cx="64" cy="58.5" rx="2.4" ry="4"/></g>
+              <circle class="flower-center" cx="64" cy="64" r="2.2"/>
+            </g>
           </svg>
           <svg class="vine vine-br" viewBox="0 0 100 100" aria-hidden="true">
-            <path d="M98 98 Q 70 94 64 70 Q 60 44 30 40" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
-            <ellipse cx="28" cy="40" rx="7" ry="3" transform="rotate(38 28 40)" fill="currentColor" />
-            <ellipse cx="68" cy="80" rx="5" ry="2.4" transform="rotate(-20 68 80)" fill="currentColor" />
+            <path class="stem" d="M96 96 Q 72 92 66 70 Q 62 44 36 36" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
+            <ellipse class="leaf l1" cx="82" cy="86" rx="4.6" ry="2.1" style="--rot:-20deg" fill="currentColor"/>
+            <ellipse class="leaf l2" cx="68" cy="78" rx="4" ry="2" style="--rot:24deg" fill="currentColor"/>
+            <ellipse class="leaf l3" cx="64" cy="58" rx="4.6" ry="2.2" style="--rot:-30deg" fill="currentColor"/>
+            <ellipse class="leaf l4" cx="54" cy="44" rx="4.2" ry="2" style="--rot:30deg" fill="currentColor"/>
+            <ellipse class="leaf l5" cx="46" cy="40" rx="4" ry="1.9" style="--rot:-20deg" fill="currentColor"/>
+            <g class="flower" style="--fx:36px; --fy:36px;">
+              <g transform="rotate(0 36 36)"><ellipse class="petal" cx="36" cy="30.5" rx="2.4" ry="4"/></g>
+              <g transform="rotate(72 36 36)"><ellipse class="petal" cx="36" cy="30.5" rx="2.4" ry="4"/></g>
+              <g transform="rotate(144 36 36)"><ellipse class="petal" cx="36" cy="30.5" rx="2.4" ry="4"/></g>
+              <g transform="rotate(216 36 36)"><ellipse class="petal" cx="36" cy="30.5" rx="2.4" ry="4"/></g>
+              <g transform="rotate(288 36 36)"><ellipse class="petal" cx="36" cy="30.5" rx="2.4" ry="4"/></g>
+              <circle class="flower-center" cx="36" cy="36" r="2.2"/>
+            </g>
           </svg>
           <iframe
             title="Eden Garden Convention Centre — Pandalam"

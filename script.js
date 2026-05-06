@@ -32,28 +32,104 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// ----------- Music toggle -----------
+// ----------- Music: starts on first scroll / touch / click -----------
 const musicToggle = document.getElementById("music-toggle");
 const musicHint = document.getElementById("music-hint");
 const bgMusic = document.getElementById("bg-music");
 let musicPlaying = false;
+let musicStarted = false;
+const TARGET_VOLUME = 0.32;
 
-setTimeout(() => musicHint && musicHint.classList.add("show"), 1800);
-setTimeout(() => musicHint && musicHint.classList.remove("show"), 8000);
+bgMusic.volume = 0;
 
-musicToggle.addEventListener("click", async () => {
+function updateToggleUI(playing) {
+  musicPlaying = playing;
+  musicToggle.textContent = playing ? "♫" : "♪";
+  musicToggle.setAttribute(
+    "aria-label",
+    playing ? "Pause music" : "Enable music"
+  );
+  if (playing && musicHint) musicHint.classList.remove("show");
+}
+
+function fadeInMusic(duration = 900) {
+  const start = performance.now();
+  const tick = (now) => {
+    const t = Math.min((now - start) / duration, 1);
+    bgMusic.volume = TARGET_VOLUME * t;
+    if (t < 1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+}
+
+function fadeOutMusic(duration = 600) {
+  const startVol = bgMusic.volume;
+  const start = performance.now();
+  const tick = (now) => {
+    const t = Math.min((now - start) / duration, 1);
+    bgMusic.volume = startVol * (1 - t);
+    if (t < 1) requestAnimationFrame(tick);
+    else bgMusic.pause();
+  };
+  requestAnimationFrame(tick);
+}
+
+function startMusicOnce() {
+  if (musicStarted) return;
+  musicStarted = true;
+  bgMusic.muted = false;
+  bgMusic.volume = 0;
+  bgMusic
+    .play()
+    .then(() => {
+      fadeInMusic();
+      updateToggleUI(true);
+    })
+    .catch(() => {
+      musicStarted = false;
+    });
+  removeStartListeners();
+}
+
+function removeStartListeners() {
+  window.removeEventListener("scroll", startMusicOnce);
+  window.removeEventListener("wheel", startMusicOnce);
+  window.removeEventListener("touchstart", startMusicOnce);
+  window.removeEventListener("touchmove", startMusicOnce);
+  window.removeEventListener("pointerdown", startMusicOnce);
+  window.removeEventListener("click", startMusicOnce);
+  window.removeEventListener("keydown", startMusicOnce);
+}
+
+bgMusic.addEventListener("ended", () => updateToggleUI(false));
+
+window.addEventListener("scroll", startMusicOnce, { passive: true });
+window.addEventListener("wheel", startMusicOnce, { passive: true });
+window.addEventListener("touchstart", startMusicOnce, { passive: true });
+window.addEventListener("touchmove", startMusicOnce, { passive: true });
+window.addEventListener("pointerdown", startMusicOnce, { passive: true });
+window.addEventListener("click", startMusicOnce);
+window.addEventListener("keydown", startMusicOnce);
+
+setTimeout(() => {
+  if (!musicPlaying && musicHint) musicHint.classList.add("show");
+}, 1200);
+setTimeout(() => musicHint && musicHint.classList.remove("show"), 9000);
+
+musicToggle.addEventListener("click", async (e) => {
+  e.stopPropagation();
   if (musicHint) musicHint.classList.remove("show");
   try {
     if (musicPlaying) {
-      bgMusic.pause();
-      musicToggle.textContent = "♪";
-      musicToggle.setAttribute("aria-label", "Enable music");
-      musicPlaying = false;
+      fadeOutMusic();
+      updateToggleUI(false);
     } else {
+      bgMusic.muted = false;
       await bgMusic.play();
-      musicToggle.textContent = "♫";
-      musicToggle.setAttribute("aria-label", "Pause music");
-      musicPlaying = true;
+      fadeInMusic(700);
+      updateToggleUI(true);
+      musicStarted = true;
+      removeStartListeners();
     }
   } catch (_error) {
     musicToggle.textContent = "×";
@@ -75,6 +151,37 @@ const io = new IntersectionObserver(
   { threshold: 0.12 }
 );
 revealEls.forEach((el) => io.observe(el));
+
+// ----------- Vine grow on scroll-into-view (every device) -----------
+const vineHosts = document.querySelectorAll(
+  ".couple-frame, .vine-card, .map-card"
+);
+
+const vineIO = new IntersectionObserver(
+  (entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setTimeout(
+          () => entry.target.classList.add("vine-grown"),
+          250 + Math.random() * 250
+        );
+        obs.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.28 }
+);
+vineHosts.forEach((el) => vineIO.observe(el));
+
+// Tap / click re-bloom for delight on any device
+vineHosts.forEach((el) => {
+  const reBloom = () => {
+    el.classList.remove("vine-grown");
+    void el.offsetWidth;
+    el.classList.add("vine-grown");
+  };
+  el.addEventListener("touchstart", reBloom, { passive: true });
+});
 
 // ----------- Cursor Trail (sparkles + leaves) -----------
 const trailContainer = document.getElementById("cursor-trail");
